@@ -1,4 +1,5 @@
-﻿namespace Quiz_Beginners
+using sync.Globalization.Localization
+namespace Quiz_Beginners
 {
     class CSharpBasics
     {
@@ -8,8 +9,18 @@
         /// is landscape or portrait.
         /// </summary>
         /// 
+         public void ImageSize()
+        {
+         Console.WriteLine("Enter the height of the image");// getting input from user(height)
+         x=Convert.ToInt32(Console.ReadLine());// getting the value to a variable
+         Console.WriteLine("Enter the width of the image");//getting input from user(width)
+         y=Convert.ToInt32(Console.ReadLine());
+        if (y > x)   
+            type = "landscape";
+        else
+            type = "portrait";
 
-
+        }
 
 
         /// <summary>
@@ -18,8 +29,22 @@
         /// and display it as 5! = 120.
         /// </summary>
         /// 
-
-
+            public void Factorial()
+            {
+                 Console.WriteLine("Enter the number");// getting input 
+                 x=Convert.ToInt32(Console.ReadLine());// getting the value to a variable
+                while (x!=1)
+                {
+                     result=result*x; //calculating factorial
+                     x=x-1;// decrementing the value by 1
+                }  
+                
+               Console.WriteLine(result);
+                
+            }
+            
+                      
+                              
 
 
         /// <summary>
@@ -27,8 +52,23 @@
         /// Display the reversed name on the console.
         /// </summary>
         /// 
+        public void DisplayName()
+        {
+            string str = "", reverse = "";  
+            int Length = 0;  
+            Console.WriteLine("Enter a Word"); //Getting String(word) from Console  
+            str = Console.ReadLine();  
+            Length = str.Length - 1;  //Calculate length of string str 
+            while(Length>=0)  
+            {  
+                reverse = reverse + str[Length];  
+                Length--;  
+            }   
+             Console.WriteLine("Reverse word is {0}",reverse);
+            }  
+            
 
-
+     
 
         /// <summary>
         /// Write a program and ask the user to enter a few numbers separated by a hyphen. Work out 
@@ -37,7 +77,30 @@
         /// </summary>
         /// 
 
+ public void ConsecutiveNumbers()
+             {
+                Console.WriteLine("Input a few numbers separated by a hyphen : ");
+                string input = Console.ReadLine();
+                string[] split = input.Split('-');
+                string temp = split[0];
 
+                for (int i = 1; i < split.Length; i++)
+                   {
+                       temp++;
+                       Console.WriteLine(temp);
+
+    
+                if (temp == split[i])
+                 {
+                     Console.WriteLine("Consecutive");
+                  }
+                 else
+                 {
+                     Console.WriteLine("Not Consecutive");
+                 }
+                }
+     
+      }
 
     }
 }
